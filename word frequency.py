@@ -16,19 +16,13 @@ master_df = pd.DataFrame()
 
 # go through files and append data into master dataframe
 for file in file_list:
-    master_df = master_df.append(pd.read_excel(file, header=None, skiprows=26), ignore_index=True)
-
-# set new header for the row whose word frequency is to be printed in the master dataframe
-try:
-    new_header = list(master_df.columns.values)
-    new_header[frequency_data_column_number] = "data"
-    master_df.columns = new_header
-except IndexError:
-    print("Row specified is not in the given columns or no file given")
-    exit()
+    master_df = master_df.append(pd.read_excel(file, header=None, skiprows=25), ignore_index=True)
 
 # define new dataframe for frequency data
-frequency_data = master_df["data"].dropna().to_frame()
+frequency_data = master_df.iloc[:, frequency_data_column_number].dropna().to_frame()
+
+# set header for frequency data
+frequency_data.columns = ["data"]
 
 # get frequency data from master dataframe
 frequency = frequency_data.data.str.split(expand=True).stack().value_counts().to_frame()
