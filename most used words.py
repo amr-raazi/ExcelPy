@@ -25,8 +25,7 @@ try:
     new_header[data_row_number] = "data"
     master_df.columns = new_header
 except IndexError:
-    "Row specified is not in the given columns or no file given"
-    exit()
+    print("Row specified is not in the given columns or no file given")
 
 # get frequency data from master dataframe
 frequency = master_df.data.str.split(expand=True).stack().value_counts()
