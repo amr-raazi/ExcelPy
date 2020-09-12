@@ -2,9 +2,9 @@ import pandas as pd
 import os
 
 # user inputted variables
-file_path = r""
-save_path = r""
-acceptable_terms = []
+file_path = r"excel_files\word frequency.xlsx"
+save_path = r"excel_files"
+acceptable_terms = ["vase", "bowl", "tray", "table", "plate", "C/holder"]
 column_num_to_be_sorted_on = 0
 
 # program variables
@@ -21,6 +21,12 @@ for row_number in range(num_of_rows):
             row_data = df.iloc[row_number]
             new_df = new_df.append(row_data)
 
+# cd into directory
 os.chdir(save_path)
+
+# reset index
+new_df.index = range(new_df.shape[0])
+
+# save as excel
 new_df.to_excel("Filtered Data.xlsx")
 exit()

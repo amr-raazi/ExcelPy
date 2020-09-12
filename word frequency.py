@@ -21,7 +21,7 @@ for file in file_list:
 # set new header for the row whose word frequency is to be printed in the master dataframe
 try:
     new_header = list(master_df.columns.values)
-    new_header[data_row_number] = "data"
+    new_header[frequency_data_column_number] = "data"
     master_df.columns = new_header
 except IndexError:
     print("Row specified is not in the given columns or no file given")
