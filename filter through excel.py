@@ -2,9 +2,9 @@ import pandas as pd
 import os
 
 # user inputted variables
-file_path = r"excel_files\word frequency.xlsx"
+file_path = r"excel_files\"
 save_path = r"excel_files"
-acceptable_terms = ["vase", "bowl", "tray", "table", "plate", "C/holder"]
+acceptable_terms = []
 column_num_to_be_sorted_on = 0
 
 # program variables
