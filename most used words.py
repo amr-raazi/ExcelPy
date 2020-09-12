@@ -1,6 +1,5 @@
 import pandas
 import os
-import numpy
 
 # user inputted variables
 folder_path = r"excel_files"
@@ -22,9 +21,9 @@ for file in file_list:
 
 # set new header for the row whose word frequency is to be printed
 try:
-  new_header = list(master_df.columns.values)
-  new_header[data_row_number] = "data"
-  master_df.columns = new_header
+    new_header = list(master_df.columns.values)
+    new_header[data_row_number] = "data"
+    master_df.columns = new_header
 except IndexError:
     "Row specified is not in the given columns or no file given"
     exit()
@@ -34,4 +33,3 @@ frequency = master_df.data.str.split(expand=True).stack().value_counts()
 
 # save to excel
 pandas.frequency.to_excel("word frequency.xlsx")
-
