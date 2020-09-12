@@ -16,7 +16,7 @@ master_df = pd.DataFrame()
 
 # go through files and append data into master dataframe
 for file in file_list:
-    master_df = master_df.append(pd.read_excel(file, header=None, skiprows=25), ignore_index=True, )
+    master_df = master_df.append(pd.read_excel(file, header=None, skiprows=26), ignore_index=True)
 
 # set new header for the row whose word frequency is to be printed in the master dataframe
 try:
