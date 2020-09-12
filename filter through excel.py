@@ -8,7 +8,7 @@ acceptable_terms = []
 column_num_to_be_sorted_on = 0
 
 # program variables
-df = pd.read_excel(file_path, names=["word", "frequency"])
+df = pd.read_excel(file_path, names=["Word", "Frequency"])
 num_of_rows = df.shape[0]
 new_df = pd.DataFrame()
 
