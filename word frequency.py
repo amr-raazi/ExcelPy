@@ -3,7 +3,7 @@ import os
 
 # user inputted variables
 folder_path = r"excel_files"
-data_row_number = 3
+frequency_data_column_number = 3
 
 # program variable
 file_list = os.listdir(folder_path)
@@ -34,4 +34,4 @@ frequency_data = master_df["data"].dropna().to_frame()
 frequency = frequency_data.data.str.split(expand=True).stack().value_counts().to_frame()
 
 # save to excel
-frequency.to_excel("word frequency.xlsx")
+frequency.to_excel("Word Frequency.xlsx")
